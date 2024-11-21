@@ -77,14 +77,15 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("BreadCrumbExample"),
+      ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        
         children: [
-
- Consumer<BreadCrumbExample>(builder: (context, value, child){
-  return BreadCrumbWidget(breadCrumbs: value.item);
- }),
-
+          Consumer<BreadCrumbExample>(builder: (context, value, child) {
+            return BreadCrumbWidget(breadCrumbs: value.item);
+          }),
           TextButton(
               onPressed: () {
                 Navigator.of(context).pushNamed('/new');
@@ -127,24 +128,27 @@ class _AddBreadCrumbState extends State<AddBreadCrumb> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        children: [
-          TextField(
-            controller: _controller,
-            decoration:
-                const InputDecoration(hintText: 'Enter a new bread crumb'),
-          ),
-          TextButton(
-              onPressed: () {
-                final text = _controller.text;
-                if (text.isNotEmpty) {
-                  final breadCrumb = BreadCrumb(isActive: false, name: text);
-                  context.read<BreadCrumbExample>().add(breadCrumb);
-                  Navigator.of(context).pop();
-                }
-              },
-              child: const Text("add"))
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Column(
+          children: [
+            TextField(
+              controller: _controller,
+              decoration:
+                  const InputDecoration(hintText: 'Enter a new bread crumb'),
+            ),
+            TextButton(
+                onPressed: () {
+                  final text = _controller.text;
+                  if (text.isNotEmpty) {
+                    final breadCrumb = BreadCrumb(isActive: false, name: text);
+                    context.read<BreadCrumbExample>().add(breadCrumb);
+                    Navigator.of(context).pop();
+                  }
+                },
+                child: const Text("add"))
+          ],
+        ),
       ),
     );
   }

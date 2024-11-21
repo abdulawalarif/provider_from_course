@@ -1,16 +1,78 @@
-# provider_from_course
+# This project is for excerising Provider with Flutter 
 
-A new Flutter project.
+## A Flutter project implementing three different example project with provider.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+1. Breadcrumb 
 
-A few resources to get you started if this is your first Flutter project:
+1.1 Dynamic Breadcrumb Creation
+ - Add breadcrumbs with custom names dynamically via a text field.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+ 1.2 Breadcrumb State Management
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ - Active breadcrumbs are styled differently (blue color).
+ - All breadcrumbs before the latest are activated automatically.
+
+1.3 Reset Functionality
+
+ - Clear all breadcrumbs at once using the reset button.
+
+1.4 Provider Integration
+ - Efficient state management using ChangeNotifier and Consumer.
+ 
+
+<a><img src="demo/first.gif" width="350"></a>
+
+
+## File stracture
+
+    ├── lib
+    │   ├── main.dart
+    │   ├── bread_crumb_example.dart 
+    │   ├── --.dart
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone git@github.com:abdulawalarif/provider_from_course.git
+```
+
+Go to the project directory
+
+```bash
+  cd provider_from_course
+```
+
+Install dependencies
+
+```bash
+  flutter pub get
+```
+
+Connect a physical device or start a virtual device on your machine
+
+```bash
+  flutter run
+```
+
+## How to tweak this project for your own uses
+
+
+
+## Reporting Bugs or Requesting Features?
+
+If you found an issue or would like to submit an improvement to this project,
+please submit an issue using the issues tab above. If you would like to submit a PR with a fix, reference the issue you created!
+
+## Known Issues and Future Work
+
+- 
+
+## Author
+- [@abdulawalarif](https://github.com/abdulawalarif)
+
+## License
+The MIT License (MIT). Please view the [License](LICENSE) File for more information.
