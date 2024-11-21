@@ -1,5 +1,4 @@
-//Multi provider main widget
-
+// Multi provider main widget
 // import 'package:flutter/material.dart';
 // import 'package:provider/provider.dart';
 // import 'package:provider_from_course/multi_provider.dart';
@@ -27,20 +26,37 @@
 //   ));
 // }
 
+// Bread crumb main widget..
+// import 'package:flutter/material.dart';
+// import 'package:provider/provider.dart';
+// import 'package:provider_from_course/bread_crumb_example.dart';
 
+// void main() {
+//   runApp(
+//     ChangeNotifierProvider(
+//       create: (_) => BreadCrumbExample(),
+//       child: MaterialApp(
+//         home: MainScreen(),
+//         routes: {
+//           '/new': (context) => AddBreadCrumb(),
+//         },
+//       ),
+//     ),
+//   );
+// }
+
+// Cheap widget and expensive widget example code's main
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_from_course/bread_crumb_example.dart';
+import 'package:provider_from_course/cheap_and_expensive_object.dart';
 
 void main() {
   runApp(
     ChangeNotifierProvider(
-      create: (_) => BreadCrumbExample(),
-      child: MaterialApp(
-        home: MainScreen(),
-        routes: {
-          '/new': (context) => AddBreadCrumb(),
-        },
+      create: (_) => ObjectProvider(),
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomePage(),
       ),
     ),
   );
