@@ -22,7 +22,7 @@
  - Efficient state management using ChangeNotifier and Consumer.
  
 
-<a><img src="demo/first.gif" width="350"></a>
+<a><img src="demo/first.gif" width="200"></a>
 
 
 ## File stracture

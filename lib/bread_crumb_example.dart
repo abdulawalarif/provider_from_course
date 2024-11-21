@@ -32,6 +32,8 @@ class BreadCrumbExample extends ChangeNotifier {
   UnmodifiableListView<BreadCrumb> get item => UnmodifiableListView(_items);
 
   void add(BreadCrumb breadCrumb) {
+    //here I am adding a breadCrumb
+    // For changing the color of items before the last itme, I am activating all the items and then at last, adding the item that sent fromthe UI
     for (final item in _items) {
       item.activate();
     }
@@ -81,7 +83,6 @@ class _MainScreenState extends State<MainScreen> {
         title: const Text("BreadCrumbExample"),
       ),
       body: Column(
-        
         children: [
           Consumer<BreadCrumbExample>(builder: (context, value, child) {
             return BreadCrumbWidget(breadCrumbs: value.item);
