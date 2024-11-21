@@ -24,6 +24,7 @@
 
 <a><img src="demo/first.gif" width="200"></a>
 <a><img src="demo/second.gif" width="205"></a>
+<a><img src="demo/third.gif" width="200"></a>
 
 
 ## File stracture
@@ -32,6 +33,7 @@
     │   ├── main.dart
     │   ├── bread_crumb_example.dart 
     │   ├── cheap_and_expensive_object.dart
+    │   ├── multi_provider.dart
 
 ## Run Locally
 

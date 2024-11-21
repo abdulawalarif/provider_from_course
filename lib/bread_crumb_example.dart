@@ -32,11 +32,10 @@ class BreadCrumbExample extends ChangeNotifier {
   UnmodifiableListView<BreadCrumb> get item => UnmodifiableListView(_items);
 
   void add(BreadCrumb breadCrumb) {
-    //here I am adding a breadCrumb
-    // For changing the color of items before the last itme, I am activating all the items and then at last, adding the item that sent fromthe UI
-    for (final item in _items) {
-      item.activate();
+    if(_items.isNotEmpty){
+        _items[_items.length-1].activate();
     }
+  
     _items.add(breadCrumb);
     notifyListeners();
   }
@@ -60,6 +59,7 @@ class BreadCrumbWidget extends StatelessWidget {
       children: breadCrumbs.map((breadCrumb) {
         return Text(
           breadCrumb.title,
+          // This conditional rendering is for checking is any breadCrumb available after that..
           style: TextStyle(
               color: breadCrumb.isActive ? Colors.blue : Colors.black),
         );
@@ -85,6 +85,7 @@ class _MainScreenState extends State<MainScreen> {
       body: Column(
         children: [
           Consumer<BreadCrumbExample>(builder: (context, value, child) {
+            //sending the UnmodifiableListView od BreadCrumb type into BreadCrumbWidget to be renderd
             return BreadCrumbWidget(breadCrumbs: value.item);
           }),
           TextButton(
@@ -94,6 +95,7 @@ class _MainScreenState extends State<MainScreen> {
               child: const Text('Add new bread crumb')),
           TextButton(
               onPressed: () {
+                // cleanning the list 
                 context.read<BreadCrumbExample>().reset();
               },
               child: const Text('Reset')),
