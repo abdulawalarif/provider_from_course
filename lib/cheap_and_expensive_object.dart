@@ -37,6 +37,7 @@ class ObjectProvider extends ChangeNotifier {
       : id = const Uuid().v4(),
         _cheapObject = CheapObject(),
         _expensiveObject = ExpensiveObject() {
+          //Start is initializing the streams
     start();
   }
 
@@ -92,10 +93,10 @@ class HomePage extends StatelessWidget {
             children: [
               TextButton(onPressed: (){
                 context.read<ObjectProvider>().stop();
-              }, child: Text('Stop')),
+              }, child: const Text('Stop')),
                TextButton(onPressed: (){
                 context.read<ObjectProvider>().start();
-               }, child: Text('Start'))
+               }, child: const Text('Start'))
             ],
           ),
         ],
@@ -131,6 +132,8 @@ class CheapWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // select just lisent to specific changes in this provider
+    // here this is cheapObject
     final cheapObject = context.select<ObjectProvider, CheapObject>(
       (provider) => provider.cheapObject,
     );
@@ -153,6 +156,7 @@ class ObjectProverWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //context.watch listen to any changes in the provider
     final objectProvider = context.watch<ObjectProvider>();
     return Container(
       height: 100,

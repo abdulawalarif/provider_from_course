@@ -23,6 +23,7 @@
  
 
 <a><img src="demo/first.gif" width="200"></a>
+<a><img src="demo/second.gif" width="205"></a>
 
 
 ## File stracture
@@ -30,7 +31,7 @@
     ├── lib
     │   ├── main.dart
     │   ├── bread_crumb_example.dart 
-    │   ├── --.dart
+    │   ├── cheap_and_expensive_object.dart
 
 ## Run Locally
 
